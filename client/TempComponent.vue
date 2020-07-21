@@ -65,6 +65,9 @@ export default {
     },
   },
   meteor: {
+    $subscribe: {
+      allItems: [],
+    },
     items() {
       return Items.find({}).fetch();
     },
