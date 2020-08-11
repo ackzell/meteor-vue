@@ -1,11 +1,13 @@
 <template>
-  <div>
-    <p>
-      {{ greeting }}
-    </p>
+  <v-app>
+    <v-container>
+      <h1>
+        {{ greeting }}
+      </h1>
 
-    <temp-component />
-  </div>
+      <temp-component />
+    </v-container>
+  </v-app>
 </template>
 
 <script>

@@ -3,35 +3,55 @@
     id="some-id"
     class="my-class"
   >
-    {{ message }} <br> {{ message2 }}
+    <v-card class="mb-5">
+      <v-card-text>
+        <form @submit.prevent="saveNewItem">
+          <v-container>
+            <v-row align="center">
+              <v-col>
+                <v-text-field
+                  id="item-name"
+                  v-model="item.name"
+                  label="Name"
+                />
+              </v-col>
+              <v-col>
+                <v-text-field
+                  id="item-price"
+                  v-model="item.price"
+                  label="Price"
+                />
+              </v-col>
+              <v-col>
+                <v-btn
+                  color="primary"
+                  type="submit"
+                >
+                  Save
+                </v-btn>
+              </v-col>
+            </v-row>
+          </v-container>
+        </form>
+      </v-card-text>
+    </v-card>
 
-    <br>
+    <v-card>
+      <v-card-text>
+        <v-list>
+          <v-list-item
+            v-for="(item, idx) in items"
+            :key="idx"
+          >
+            <v-list-item-content two-line>
+              <v-list-item-title>${{ item.price }} - {{ item.name }}</v-list-item-title>
+              <v-list-item-subtitle> {{ item._id }} </v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-card-text>
+    </v-card>
 
-    <ul>
-      <li
-        v-for="(item, idx) in items"
-        :key="idx"
-      >
-        {{ item.name }} | ${{ item.price }}
-      </li>
-    </ul>
-
-    <form @submit.prevent="saveNewItem">
-      <label for="item-name">Name</label>
-      <input
-        id="item-name"
-        v-model="item.name"
-        type="text"
-      >
-      <br>
-      <label for="item-price">Price</label>
-      <input
-        id="item-price"
-        v-model="item.price"
-        type="text"
-      >
-      <button>Save</button>
-    </form>
   </div>
 </template>
 
@@ -44,7 +64,7 @@ export default {
     return {
       message: 'Hello YouTube!',
       message2: 'Subscribe',
-      item: { name: '', price: 0 },
+      item: { name: '', price: null },
     };
   },
   computed: {
