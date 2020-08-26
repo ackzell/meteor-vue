@@ -47,6 +47,14 @@
               <v-list-item-title>${{ item.price }} - {{ item.name }}</v-list-item-title>
               <v-list-item-subtitle> {{ item._id }} </v-list-item-subtitle>
             </v-list-item-content>
+            <v-list-item-action>
+              <v-btn
+                icon
+                @click="removeItem(item)"
+              >
+                <v-icon>mdi-delete</v-icon>
+              </v-btn>
+            </v-list-item-action>
           </v-list-item>
         </v-list>
       </v-card-text>
@@ -75,14 +83,27 @@ export default {
   },
   methods: {
     saveNewItem() {
-      Meteor.call('createItem', this.item, function(error, result) {
+      Meteor.call('createItem', this.item, (error, result) => {
         if (error) {
           console.error('something went wrong', error);
         } else {
           console.info(result);
+          this.item = {
+              name: '',
+              price: null
+          }
         }
       });
     },
+    removeItem(item) {
+        Meteor.call('deleteItem', item, (error, result) => {
+            if (error) {
+                console.error('something went wrong deleting:', error)
+            } else {
+                console.info(result)
+            }
+        })
+    }
   },
   meteor: {
     $subscribe: {
