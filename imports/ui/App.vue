@@ -5,7 +5,12 @@
         {{ greeting }}
       </h1>
 
-      <temp-component />
+      <header>
+        <router-link to="/">Home</router-link>
+        <router-link to="/about">About</router-link>
+      </header>
+
+      <router-view />
     </v-container>
   </v-app>
 </template>
