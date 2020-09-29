@@ -35,7 +35,7 @@ Meteor.startup(() => {
       },
       {
         path: '/about',
-        name: 'home',
+        name: 'about',
         component: () => import('/client/components/About.vue'),
       },
     ],
