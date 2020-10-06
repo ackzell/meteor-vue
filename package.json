@@ -8,13 +8,13 @@
     "visualize": "meteor --production --extra-packages bundle-visualizer"
   },
   "dependencies": {
-    "@babel/runtime": "^7.11.2",
+    "@babel/runtime": "^7.8.3",
     "bcrypt": "^5.0.0",
     "jquery": "^3.4.1",
-    "meteor-node-stubs": "^1.0.1",
-    "vue": "^2.6.12",
+    "meteor-node-stubs": "^1.0.0",
+    "vue": "^2.6.11",
     "vue-meteor-tracker": "^2.0.0-beta.5",
-    "vue-router": "^3.4.5"
+    "vue-router": "^3.4.3"
   },
   "meteor": {
     "mainModule": {
@@ -25,12 +25,12 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.10.0",
-    "eslint-config-prettier": "^6.12.0",
+    "eslint": "^7.3.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-vue": "^7.0.1",
-    "prettier": "^2.1.2",
+    "eslint-plugin-vue": "^7.0.0-alpha.6",
+    "prettier": "^2.0.5",
     "vue-eslint-parser": "^7.1.0",
-    "vuetify": "^2.3.12"
+    "vuetify": "^2.3.6"
   }
 }

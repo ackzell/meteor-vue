@@ -1,26 +1,21 @@
 <template>
   <v-app>
-    <v-app-bar app>
-      <v-tabs>
-        <v-tab @click="$router.push('/')">
+    <v-container>
+      <h1>
+        {{ greeting }}
+      </h1>
+
+      <header>
+        <router-link to="/">
           Home
-        </v-tab>
-        <v-tab @click="$router.push('/About')">
+        </router-link>
+        <router-link to="/about">
           About
-        </v-tab>
-        <v-tab>Tab 3</v-tab>
-      </v-tabs>
-    </v-app-bar>
-    <v-main>
-      <v-container>
-        <h1>
-          {{ greeting }}
-        </h1>
-      </v-container>
-      <v-container>
-        <router-view />
-      </v-container>
-    </v-main>
+        </router-link>
+      </header>
+
+      <router-view v-if="user" />
+    </v-container>
   </v-app>
 </template>
 
