@@ -59,7 +59,6 @@
         </v-list>
       </v-card-text>
     </v-card>
-
   </div>
 </template>
 
@@ -72,7 +71,6 @@ export default {
     return {
       message: 'Hello YouTube!',
       message2: 'Subscribe',
-      item: { name: '', price: null },
     };
   },
   computed: {
@@ -89,21 +87,21 @@ export default {
         } else {
           console.info(result);
           this.item = {
-              name: '',
-              price: null
-          }
+            name: '',
+            price: null,
+          };
         }
       });
     },
     removeItem(item) {
-        Meteor.call('deleteItem', item, (error, result) => {
-            if (error) {
-                console.error('something went wrong deleting:', error)
-            } else {
-                console.info(result)
-            }
-        })
-    }
+      Meteor.call('deleteItem', item, (error, result) => {
+        if (error) {
+          console.error('something went wrong deleting:', error);
+        } else {
+          console.info(result);
+        }
+      });
+    },
   },
   meteor: {
     $subscribe: {
