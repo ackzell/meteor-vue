@@ -5,40 +5,17 @@ import VueMeteorTracker from 'vue-meteor-tracker';
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
 
-import Router from 'vue-router';
-
-import AppComponent from '/imports/ui/App.vue';
+import router from './router'
+import AppComponent from './components/App.vue';
 
 Meteor.startup(() => {
   Vue.use(VueMeteorTracker);
   Vue.use(Vuetify);
-  Vue.use(Router);
 
   const vuetify = new Vuetify({
     theme: {
-      dark: true,
+      dark: false,
     },
-  });
-
-  const router = new Router({
-    mode: 'history',
-    routes: [
-      {
-        path: '/',
-        name: 'home',
-        component: () => import('/client/components/TempComponent.vue'),
-      },
-      {
-        path: '*',
-        name: 'notfound',
-        component: () => import('/client/components/NotFound.vue'),
-      },
-      {
-        path: '/about',
-        name: 'about',
-        component: () => import('/client/components/About.vue'),
-      },
-    ],
   });
 
   new Vue({

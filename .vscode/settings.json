@@ -4,7 +4,7 @@
   "window.zoomLevel": 1,
   "editor.formatOnSave": true,
   "editor.fontLigatures": false,
-  //"editor.fontFamily": "'Space Mono'",
+  // "editor.fontFamily": "'Space Mono'",
   "editor.fontWeight": "500",
   "eslint.validate": [
     "javascript",
