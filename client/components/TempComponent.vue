@@ -71,6 +71,7 @@ export default {
     return {
       message: 'Hello YouTube!',
       message2: 'Subscribe',
+      item: { name: '', price: null },
     };
   },
   computed: {
