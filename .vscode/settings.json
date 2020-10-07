@@ -1,19 +1,17 @@
 {
-  "workbench.colorTheme": "Night Owl",
   "editor.fontSize": 16,
   "window.zoomLevel": 1,
   "editor.formatOnSave": true,
   "editor.fontLigatures": false,
-  // "editor.fontFamily": "'Space Mono'",
   "editor.fontWeight": "500",
   "eslint.validate": [
     "javascript",
     "javascriptreact",
+    "typescript",
     "vue"
   ],
   "vetur.experimental.templateInterpolationService": true,
   "vetur.format.defaultFormatter.html": "js-beautify-html",
   "vetur.format.defaultFormatter.js": "prettier-eslint",
-  "vetur.validation.template": false,
-  "workbench.iconTheme": "eq-material-theme-icons"
+  "vetur.validation.template": true,
 }

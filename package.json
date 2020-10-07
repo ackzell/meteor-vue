@@ -12,6 +12,7 @@
     "bcrypt": "^5.0.0",
     "jquery": "^3.4.1",
     "meteor-node-stubs": "^1.0.1",
+    "typescript": "^4.0.3",
     "vue": "^2.6.12",
     "vue-meteor-tracker": "^2.0.0-beta.5",
     "vue-router": "^3.4.5"
