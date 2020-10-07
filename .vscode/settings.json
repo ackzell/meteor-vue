@@ -10,7 +10,7 @@
     "typescript",
     "vue"
   ],
-  "vetur.experimental.templateInterpolationService": true,
+  "vetur.experimental.templateInterpolationService": false,
   "vetur.format.defaultFormatter.html": "js-beautify-html",
   "vetur.format.defaultFormatter.js": "prettier-eslint",
   "vetur.validation.template": true,
