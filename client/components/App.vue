@@ -6,10 +6,7 @@
         <!-- -->
       </v-navigation-drawer>
 
-      <v-app-bar
-        class="mx-auto"
-        app
-      >
+      <v-app-bar app>
         <v-tabs>
           <v-tab @click="$router.push('/')">
             Home
