@@ -1,5 +1,5 @@
 import SimpleSchema from 'simpl-schema';
-import processTypSchema from "./processTypSchema";
+import processTypSchema from "../../processtypes/schemas/processTypSchema";
 
 export const processSchema = new SimpleSchema({
     _id: {
@@ -10,9 +10,5 @@ export const processSchema = new SimpleSchema({
         type: String,
         max: 40,
     },
-    processtype: [processTypSchema],
-    registered: {
-        type: Boolean,
-        defaultValue: false,
-    },
+    processtype: processTypSchema,
 });
