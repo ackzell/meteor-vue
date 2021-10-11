@@ -5,10 +5,8 @@ import '../imports/api/items';
 import '../imports/api/processes/processes';
 
 
-
-
 Meteor.startup(() => {
   // code to run on server at startup
-  const { db: mongo } = MongoInternals.defaultRemoteCollectionDriver().mongo;
-  const agenda = new Agenda({ mongo });
+  //const { db: mongo } = MongoInternals.defaultRemoteCollectionDriver().mongo;
+  //const agenda = new Agenda({ mongo });
 });
