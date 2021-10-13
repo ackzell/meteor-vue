@@ -31,6 +31,32 @@
                 </v-btn>
               </v-col>
             </v-row>
+          </v-container>  
+        </form>
+      </v-card-text>
+    </v-card>
+
+    <v-card class="mb-5">
+      <v-card-text>
+        <form @submit.prevent="setFilter">
+          <v-container>
+            <v-row align="center">
+              <v-col>
+                <v-text-field
+                  id="filter"
+                  v-model="filter"
+                  label="Filter"
+                />
+              </v-col>
+              <v-col>
+                <v-btn
+                  color="primary"
+                  type="submit"
+                >
+                  Set Filter
+                </v-btn>
+              </v-col>
+            </v-row>
           </v-container>
         </form>
       </v-card-text>
@@ -72,6 +98,8 @@ export default {
       message: 'Hello YouTube!',
       message2: 'Subscribe',
       item: { name: '', price: null },
+      filter: "",
+      filterobj: {},
     };
   },
   computed: {
@@ -103,10 +131,16 @@ export default {
         }
       });
     },
+    setFilter(){
+      this.filterobj= JSON.parse(this.filter);
+    },
   },
   meteor: {
     $subscribe: {
-      allItems: [],
+      allItems: function() {
+        // Here you can use Vue reactive properties
+        return [this.filterobj] // Subscription params
+      },
     },
     items() {
       return Items.find({}).fetch();

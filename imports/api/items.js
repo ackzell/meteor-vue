@@ -4,8 +4,14 @@ import { Mongo } from 'meteor/mongo';
 export const Items = new Mongo.Collection('items');
 
 if (Meteor.isServer) {
-  Meteor.publish('allItems', function () {
-    return Items.find();
+  Meteor.publish('allItems', function (filter) {
+    if (filter!="") {
+      return Items.find(filter);
+    }
+    else {
+      return Items.find();
+    }
+    
   });
 }
 
